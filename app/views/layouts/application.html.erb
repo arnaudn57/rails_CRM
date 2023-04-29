@@ -6,13 +6,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body>
 
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <%= render "shared/sidebar" %>
+    <%= render "shared/flashes" %>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+
+          <%= yield %>
+        </div>
+      </div>
+      <!-- /.content-header -->
+    </div>
+    <%= render "shared/footer" %>
+    <%= render "shared/control-sidebar" %>
+
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
   </body>
 </html>
